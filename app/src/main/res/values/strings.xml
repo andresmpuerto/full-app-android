@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Base App</string>
+    <string name="text_title_score">Score:</string>
+    <string name="text_default_score">0</string>
+    <string name="text_default_question">Turn 0/0</string>
+    <string name="text_answer_no">no</string>
+    <string name="text_answer_yes">yes</string>
+    <string name="text_try_again">try again</string>
+    <string name="text_btn_next">Next</string>
+</resources>

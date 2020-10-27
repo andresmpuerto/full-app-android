@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="totalScore"
+            type="Integer" />
+
+        <variable
+            name="showBall"
+            type="Boolean" />
+
+        <variable
+            name="endGame"
+            type="Boolean" />
+
+        <variable
+            name="showNext"
+            type="Boolean" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="onClickListener"
+            type="View.OnClickListener" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/text_title_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/text_title_score"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/text_score"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@{totalScore.toString() ?? `0`}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintBaseline_toBaselineOf="@+id/text_title_score"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+        <TextView
+            android:id="@+id/text_title_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="¿Where is the ball?"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/text_title"
+            app:layout_constraintEnd_toStartOf="@id/text_score"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:text="@string/text_default_question"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@id/ly_buttons"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_title_game" />
+
+        <LinearLayout
+            android:id="@+id/ly_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="@{safeUnbox(endGame) ? View.GONE : View.VISIBLE}"
+            android:weightSum="3"
+            app:layout_constraintBottom_toTopOf="@id/ly_ball"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_title">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_yes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1"
+                android:enabled="@{safeUnbox(!showNext)}"
+                android:onClick="@{onClickListener}"
+                android:tag="0"
+                android:text="A" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1"
+                android:enabled="@{safeUnbox(!showNext)}"
+                android:onClick="@{onClickListener}"
+                android:tag="1"
+                android:text="B"
+                app:backgroundTint="@color/black" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_neutral"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:enabled="@{safeUnbox(!showNext)}"
+                android:onClick="@{onClickListener}"
+                android:tag="2"
+                android:text="C"
+                app:backgroundTint="@color/teal_700" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ly_ball"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:orientation="horizontal"
+            android:visibility="@{safeUnbox(showBall) ? View.VISIBLE : View.INVISIBLE}"
+            app:layout_constraintBottom_toTopOf="@id/btn_next"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/ly_buttons"
+            app:layout_constraintTop_toBottomOf="@id/ly_buttons">
+
+            <ImageView
+                android:id="@+id/img_ball"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_margin="8dp"
+                android:contentDescription="@null"
+                android:src="@drawable/ic_sports_soccer_black_18dp" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_try_again"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:onClick="@{onClickListener}"
+            android:text="@string/text_try_again"
+            android:visibility="@{safeUnbox(endGame) ? View.VISIBLE : View.INVISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ly_ball" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:onClick="@{onClickListener}"
+            android:text="@string/text_btn_next"
+            android:visibility="@{safeUnbox(showNext) ? View.VISIBLE : View.INVISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ly_ball" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
