@@ -1,0 +1,6 @@
+com/andrempuerto/baseappandroid/DataBindingTriggerClass.java
+ com.andrempuerto.baseappandroid.DataBindingTriggerClass
+com/andrempuerto/baseappandroid/BuildConfig.java
+ com.andrempuerto.baseappandroid.BuildConfig
+com/andrempuerto/baseappandroid/databinding/ActivityMainBinding.java
+ com.andrempuerto.baseappandroid.databinding.ActivityMainBinding

@@ -1,0 +1,72 @@
+{
+    "logs": [
+        {
+            "outputFile": "C:\\Users\\anmartinez\\StudioProjects\\BaseAppAndroid\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\anmartinez\\StudioProjects\\BaseAppAndroid\\app\\src\\main\\res\\values-night\\strings.xml",
+                    "from": {
+                        "startLines": "2,6,7,9,5,4,3,8",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "57,271,318,421,207,157,104,367",
+                        "endColumns": "45,45,47,46,62,48,51,52",
+                        "endOffsets": "98,312,361,463,265,201,151,415"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "100,146,192,240,287,350,399,451",
+                        "endColumns": "45,45,47,46,62,48,51,52",
+                        "endOffsets": "141,187,235,282,345,394,446,499"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\anmartinez\\.gradle\\caches\\transforms-2\\files-2.1\\8053239dec2a17c6866096f5057647cb\\appcompat-1.2.0\\res\\values-night-v8\\values-night-v8.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "10,11,12,13,14,15,16,47",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "504,574,658,742,838,940,1042,3670",
+                        "endColumns": "69,83,83,95,101,101,93,88",
+                        "endOffsets": "569,653,737,833,935,1037,1131,3754"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\anmartinez\\.gradle\\caches\\transforms-2\\files-2.1\\4b5bf9de51d89be3fa74e63160c491d0\\material-1.2.1\\res\\values-night-v8\\values-night-v8.xml",
+                    "from": {
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1"
+                    },
+                    "to": {
+                        "startLines": "31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,48,49,50,51,52,53,54",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1808,1896,2020,2122,2224,2340,2442,2556,2684,2800,2922,3058,3178,3312,3432,3544,3759,3897,4021,4151,4273,4411,4527",
+                        "endColumns": "87,123,101,101,115,101,113,127,115,121,135,119,133,119,111,125,137,123,129,121,137,115,119",
+                        "endOffsets": "1891,2015,2117,2219,2335,2437,2551,2679,2795,2917,3053,3173,3307,3427,3539,3665,3892,4016,4146,4268,4406,4522,4642"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\anmartinez\\StudioProjects\\BaseAppAndroid\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "from": {
+                        "startLines": "-1",
+                        "startColumns": "-1",
+                        "startOffsets": "-1"
+                    },
+                    "to": {
+                        "startLines": "17",
+                        "startColumns": "4",
+                        "startOffsets": "1136",
+                        "endLines": "30",
+                        "endColumns": "12",
+                        "endOffsets": "1803"
+                    }
+                }
+            ]
+        }
+    ]
+}
